@@ -77,7 +77,7 @@ export const partnerOrganizations = [
   { name: 'Zero Waste Cities Alliance', country: 'Global', logo: '🏙️' },
 ];
 
-// Weekly Themes for IZWM 2026
+// Weekly Themes for IZWM 2026 (using IZWM brand colors)
 export const weeklyThemes = [
   {
     id: 'week-1',
@@ -85,7 +85,7 @@ export const weeklyThemes = [
     dates: 'Jan 1-3',
     title: 'LAUNCH',
     description: 'Kickstart International Zero Waste Month with launch events and awareness campaigns.',
-    color: '#8B5CF6', // Purple
+    color: '#1A2D5E', // IZWM Navy
     dateRange: { start: '2026-01-01', end: '2026-01-03' }
   },
   {
@@ -95,7 +95,7 @@ export const weeklyThemes = [
     title: 'BARRIERS TO ZERO WASTE',
     subtitle: '(Refuse Single-Use Day)',
     description: 'Identify and address barriers preventing zero waste adoption. Highlight alternatives to single-use plastics.',
-    color: '#EF4444', // Red
+    color: '#952925', // IZWM Brick Red
     dateRange: { start: '2026-01-04', end: '2026-01-10' }
   },
   {
@@ -105,7 +105,7 @@ export const weeklyThemes = [
     title: 'SOLUTIONS WEEK',
     subtitle: '(Reuse, etc)',
     description: 'Showcase proven zero waste solutions: reuse systems, composting, repair initiatives, and circular models.',
-    color: '#10B981', // Green
+    color: '#C2CB32', // IZWM Lime
     dateRange: { start: '2026-01-11', end: '2026-01-17' }
   },
   {
@@ -114,7 +114,7 @@ export const weeklyThemes = [
     dates: 'Jan 18-24',
     title: 'FALSE SOLUTIONS WEEK',
     description: 'Expose greenwashing and false solutions like incineration, chemical recycling, and plastic credits.',
-    color: '#EC4899', // Pink
+    color: '#EDB849', // IZWM Gold
     dateRange: { start: '2026-01-18', end: '2026-01-24' }
   },
   {
@@ -124,7 +124,7 @@ export const weeklyThemes = [
     title: 'HUMANS OF ZERO WASTE',
     subtitle: '(Just Transition)',
     description: 'Celebrate waste workers, community leaders, and grassroots movements building a just transition.',
-    color: '#3B82F6', // Blue
+    color: '#1586C0', // IZWM Blue
     dateRange: { start: '2026-01-25', end: '2026-01-31' }
   }
 ];

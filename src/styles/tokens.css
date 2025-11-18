@@ -1,16 +1,25 @@
 :root {
-  /* Zero Waste Festival Brand Colors (from logo) */
-  --zw-lime: #A4BF3D;      /* Lime green from "ZERO" */
-  --zw-blue: #4A8FC7;       /* Blue from "WASTE" and circle */
-  --zw-green: #5B8C5A;      /* Dark green from globe */
+  /* IZWM 2026 Official Brand Colors */
+  --izwm-brick: #952925;    /* Primary brick red */
+  --izwm-gold: #EDB849;     /* Primary gold */
+  --izwm-lime: #C2CB32;     /* Primary lime green */
+  --izwm-blue: #1586C0;     /* Primary blue */
+  --izwm-navy: #1A2D5E;     /* Primary navy */
+  
+  /* Supporting Colors */
+  --izwm-cream: #F5F3ED;    /* Soft cream background */
+  --izwm-brick-light: #c94f44;
+  --izwm-gold-light: #f5c963;
+  --izwm-lime-light: #d4dc4d;
+  --izwm-blue-light: #4a9fd4;
+  
+  /* Legacy Zero Waste Festival Colors (backward compatibility) */
+  --zw-lime: #C2CB32;       /* Now using IZWM lime */
+  --zw-blue: #1586C0;       /* Now using IZWM blue */
+  --zw-green: #5B8C5A;      /* Dark green */
   --zw-cream: #F5F3ED;      /* Soft cream background */
   --zw-black: #1A1A1A;      /* Rich black for text */
-  --zw-gold: #D4A23D;       /* Gold accent from logo border */
-  
-  /* IZWM 2026 Specific Colors */
-  --izwm-navy: #2E4C74;     /* Deep navy for hero */
-  --izwm-brick: #5B8C5A;    /* Primary green */
-  --izwm-cream: #F5F3ED;    /* Cream background */
+  --zw-gold: #EDB849;       /* Now using IZWM gold */
   
   /* Neutral tones */
   --ink-900: #1A1A1A;
@@ -20,17 +29,17 @@
   --line-200: #E5E5E5;
   --line-100: #F5F5F5;
   
-  /* Accent colors - derived from logo */
-  --accent-navy: #4A8FC7;   /* Primary blue from logo */
-  --accent-gold: #D4C84A;   /* Complementary gold */
+  /* Accent colors - using IZWM brand colors */
+  --accent-navy: #1586C0;   /* IZWM blue */
+  --accent-gold: #EDB849;   /* IZWM gold */
   --accent-sage: #7BA872;   /* Mid-green */
-  --accent-sky: #6BB5E8;    /* Lighter blue */
-  --accent-lime: #A4BF3D;   /* Lime from logo */
+  --accent-sky: #4a9fd4;    /* Lighter blue */
+  --accent-lime: #C2CB32;   /* IZWM lime */
   
-  /* Modality Chips - using logo colors */
-  --chip-hybrid: #6BB5E8;   /* Light blue for hybrid */
+  /* Modality Chips - using IZWM colors */
+  --chip-hybrid: #4a9fd4;   /* Light blue for hybrid */
   --chip-inperson: #7BA872; /* Green for in-person */
-  --chip-online: #A4BF3D;   /* Lime for online */
+  --chip-online: #C2CB32;   /* IZWM lime for online */
 
   /* Layout & Effects */
   --radius-sm: 8px;
