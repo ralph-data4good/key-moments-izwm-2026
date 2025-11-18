@@ -94,7 +94,7 @@ function FeaturedEventCarousel() {
           
           {/* Event Details Overlay */}
           <div className={styles.eventOverlay}>
-            <div className={styles.spotlightLabel}>PROJECT SPOTLIGHT</div>
+            <div className={styles.spotlightLabel}>EVENT SPOTLIGHT</div>
             
             <h3 className={styles.eventTitle}>{currentEvent.title}</h3>
             
