@@ -8,24 +8,222 @@
   background: linear-gradient(to bottom, #fff 0%, var(--zw-cream) 100%);
 }
 
-.twoCol {
-  display: grid;
-  gap: clamp(40px, 8vw, 80px);
-  align-items: center;
-}
-
-@media (min-width: 1024px) {
-  .twoCol {
-    grid-template-columns: 1.1fr 0.9fr;
-  }
+/* Intro Section */
+.introSection {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto clamp(48px, 8vw, 64px);
 }
 
 .sectionTitle {
   font-size: clamp(2rem, 4.5vw, 3rem);
   font-weight: 700;
   color: var(--ink-900);
-  margin: 0 0 24px 0;
+  margin: 0 0 20px 0;
   line-height: 1.15;
+}
+
+.leadText {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: var(--ink-700);
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-bottom: clamp(48px, 8vw, 72px);
+}
+
+.statCard {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--line-200);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.statCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-navy);
+}
+
+.statIcon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--accent-navy) 0%, var(--accent-sky) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(74, 143, 199, 0.3);
+}
+
+.statValue {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: var(--accent-navy);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.95rem;
+  color: var(--ink-700);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Mission Card */
+.missionCard {
+  background: linear-gradient(135deg, var(--izwm-brick) 0%, var(--izwm-navy) 100%);
+  border-radius: var(--radius-xl);
+  padding: clamp(40px, 6vw, 56px);
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: clamp(48px, 8vw, 72px);
+  position: relative;
+  overflow: hidden;
+}
+
+.missionCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 40%, rgba(164, 191, 61, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 70% 60%, rgba(74, 143, 199, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .missionCard {
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+  }
+}
+
+.missionIcon {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .missionIcon {
+    margin: 0;
+  }
+}
+
+.missionContent {
+  position: relative;
+  z-index: 1;
+}
+
+.missionTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.missionText {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.7;
+  margin: 0 0 16px 0;
+}
+
+.missionText:last-child {
+  margin-bottom: 0;
+}
+
+/* Objectives Section */
+.objectivesSection {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.objectivesHeader {
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  color: var(--ink-900);
+  text-align: center;
+  margin: 0 0 clamp(32px, 6vw, 48px);
+}
+
+.objectivesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.objectiveCard {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--line-200);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.objectiveCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--zw-lime);
+}
+
+.objectiveIcon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--zw-lime) 0%, var(--accent-sage) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-900);
+  box-shadow: 0 4px 12px rgba(164, 191, 61, 0.3);
+}
+
+.objectiveText {
+  font-size: 1rem;
+  color: var(--ink-700);
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 600;
 }
 
 .sectionSubtitle {
@@ -33,103 +231,6 @@
   color: var(--ink-600);
   line-height: 1.6;
   margin: 0;
-}
-
-.description {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--ink-700);
-}
-
-.description p {
-  margin: 0 0 16px 0;
-}
-
-.description p:last-child {
-  margin-bottom: 0;
-}
-
-.objectives {
-  margin-top: 32px;
-  padding-top: 32px;
-  border-top: 2px solid var(--line-200);
-}
-
-.objectivesTitle {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--izwm-brick);
-  margin: 0 0 20px 0;
-}
-
-.objectivesList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.objectivesList li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--ink-700);
-}
-
-.objectivesList li svg {
-  color: var(--accent-navy);
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.visualContent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.visualPlaceholder {
-  width: 100%;
-  max-width: 450px;
-  aspect-ratio: 1;
-  background: linear-gradient(135deg, var(--izwm-brick) 0%, var(--accent-navy) 100%);
-  border-radius: var(--radius-xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-lg);
-  border: 4px solid var(--zw-gold);
-}
-
-.iconGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  padding: 40px;
-}
-
-.iconItem {
-  width: 100px;
-  height: 100px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  transition: all 0.3s ease;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.iconItem:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* History Timeline */
@@ -331,19 +432,57 @@
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-  .iconGrid {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .statCard {
+    padding: 24px 16px;
+  }
+
+  .statIcon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .statIcon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .missionCard {
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  .missionIcon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .missionIcon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .objectivesGrid {
+    grid-template-columns: 1fr;
     gap: 20px;
-    padding: 24px;
   }
 
-  .iconItem {
-    width: 70px;
-    height: 70px;
+  .objectiveCard {
+    padding: 28px 20px;
   }
 
-  .iconItem svg {
-    width: 32px;
-    height: 32px;
+  .objectiveIcon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .objectiveIcon svg {
+    width: 28px;
+    height: 28px;
   }
 
   .timelineYear {
@@ -365,4 +504,3 @@
     font-size: 2rem;
   }
 }
-

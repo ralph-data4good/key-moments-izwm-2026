@@ -1,55 +1,85 @@
 import React from 'react';
 import Icons from '../../components/Icons/Icons';
-import { aboutContent, historyContent, partnerOrganizations } from '../../config/izwm2026Content';
+import { aboutContent, historyContent, partnerOrganizations, heroContent } from '../../config/izwm2026Content';
 import styles from './AboutSection.module.css';
 
 function AboutSection() {
+  const objectiveIcons = {
+    'Celebrate community-led zero waste initiatives': 'Heart',
+    'Share best practices and solutions across Asia': 'Globe',
+    'Amplify the voices of waste pickers and frontline workers': 'Users',
+    'Build solidarity and collective action globally': 'Target'
+  };
+
+  const getObjectiveIcon = (objective) => {
+    const iconName = objectiveIcons[objective] || 'ChevronRight';
+    const IconComponent = Icons[iconName];
+    return IconComponent ? <IconComponent size={32} /> : <Icons.ChevronRight size={32} />;
+  };
+
   return (
     <section id="about" className={styles.aboutSection}>
       {/* About the Event */}
       <div className={styles.aboutEvent}>
         <div className="container">
-          <div className={styles.twoCol}>
-            <div className={styles.textContent}>
-              <h2 className={styles.sectionTitle}>
-                About International Zero Waste Month
-              </h2>
-              <div className={styles.description}>
-                {aboutContent.event.description.split('\n\n').map((paragraph, index) => (
-                  <p key={index}>{paragraph.trim()}</p>
-                ))}
-              </div>
-              
-              <div className={styles.objectives}>
-                <h3 className={styles.objectivesTitle}>Key Objectives</h3>
-                <ul className={styles.objectivesList}>
-                  {aboutContent.objectives.map((objective, index) => (
-                    <li key={index}>
-                      <Icons.ChevronRight size={20} />
-                      <span>{objective}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+          <div className={styles.introSection}>
+            <h2 className={styles.sectionTitle}>
+              About International Zero Waste Month
+            </h2>
+            <p className={styles.leadText}>
+              A global key moment organized by the Global Alliance for Incinerator Alternatives (GAIA) 
+              and partners worldwide.
+            </p>
+          </div>
 
-            <div className={styles.visualContent}>
-              <div className={styles.visualPlaceholder}>
-                <div className={styles.iconGrid}>
-                  <div className={styles.iconItem}>
-                    <Icons.Globe size={48} />
-                  </div>
-                  <div className={styles.iconItem}>
-                    <Icons.Users size={48} />
-                  </div>
-                  <div className={styles.iconItem}>
-                    <Icons.Target size={48} />
-                  </div>
-                  <div className={styles.iconItem}>
-                    <Icons.Heart size={48} />
-                  </div>
+          {/* Impact Stats */}
+          <div className={styles.statsGrid}>
+            {heroContent.stats.map((stat, index) => (
+              <div key={index} className={styles.statCard}>
+                <div className={styles.statIcon}>
+                  {index === 0 && <Icons.Globe size={32} />}
+                  {index === 1 && <Icons.Calendar size={32} />}
+                  {index === 2 && <Icons.Users size={32} />}
+                  {index === 3 && <Icons.Target size={32} />}
                 </div>
+                <div className={styles.statValue}>{stat.value}</div>
+                <div className={styles.statLabel}>{stat.label}</div>
               </div>
+            ))}
+          </div>
+
+          {/* Mission Statement */}
+          <div className={styles.missionCard}>
+            <div className={styles.missionIcon}>
+              <Icons.Heart size={48} />
+            </div>
+            <div className={styles.missionContent}>
+              <h3 className={styles.missionTitle}>Our Mission</h3>
+              <p className={styles.missionText}>
+                Throughout January, communities, cities, and organizations come together to celebrate and 
+                advance zero waste solutions—from waste reduction and reuse systems to composting and circular 
+                economy initiatives.
+              </p>
+              <p className={styles.missionText}>
+                IZWM amplifies the voices of waste workers, grassroots movements, and local leaders who are 
+                building regenerative systems that respect people and planet. It's a time to showcase what's 
+                working, share knowledge across borders, and mobilize collective action for a world without waste.
+              </p>
+            </div>
+          </div>
+
+          {/* Key Objectives Grid */}
+          <div className={styles.objectivesSection}>
+            <h3 className={styles.objectivesHeader}>Key Objectives</h3>
+            <div className={styles.objectivesGrid}>
+              {aboutContent.objectives.map((objective, index) => (
+                <div key={index} className={styles.objectiveCard}>
+                  <div className={styles.objectiveIcon}>
+                    {getObjectiveIcon(objective)}
+                  </div>
+                  <p className={styles.objectiveText}>{objective}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
