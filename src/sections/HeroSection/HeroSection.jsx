@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../../components/Logo/Logo';
 import Icons from '../../components/Icons/Icons';
+import FeaturedEventCarousel from '../../components/FeaturedEventCarousel/FeaturedEventCarousel';
 import { heroContent, KEY_MOMENT_IZWM_2026 } from '../../config/izwm2026Content';
 import styles from './HeroSection.module.css';
 
@@ -61,18 +62,19 @@ function HeroSection() {
           </div>
 
           <div className={styles.heroPanel}>
-            <h3 className={styles.panelTitle}>IZWM at a Glance</h3>
-            <div className={styles.stats}>
-              {heroContent.stats.map((stat, index) => (
-                <div key={index} className={styles.stat}>
-                  <div className={styles.statValue}>{stat.value}</div>
-                  <div className={styles.statLabel}>{stat.label}</div>
-                </div>
-              ))}
+            <FeaturedEventCarousel />
+            
+            <div className={styles.statsSection}>
+              <h3 className={styles.statsTitle}>IZWM at a Glance</h3>
+              <div className={styles.stats}>
+                {heroContent.stats.map((stat, index) => (
+                  <div key={index} className={styles.stat}>
+                    <div className={styles.statValue}>{stat.value}</div>
+                    <div className={styles.statLabel}>{stat.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <p className={styles.panelNote}>
-              <em>Expected participation for IZWM 2026</em>
-            </p>
           </div>
         </div>
       </div>
