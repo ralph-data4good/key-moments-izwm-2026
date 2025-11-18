@@ -148,7 +148,7 @@ export const getInvolvedCards = [
     icon: 'Calendar',
     cta: 'View Calendar',
     link: '#events',
-    color: '#D4A23D', // Gold
+    color: '#EDB849', // IZWM Gold
     visual: 'event'
   },
   {
@@ -160,7 +160,7 @@ export const getInvolvedCards = [
     icon: 'Users',
     cta: 'Take Action',
     link: 'https://www.facebook.com/hashtag/izwm2026',
-    color: '#4A8FC7', // Blue
+    color: '#1586C0', // IZWM Blue
     visual: 'conversation'
   },
   {
@@ -171,7 +171,7 @@ export const getInvolvedCards = [
     role: featuredQuote.role,
     link: featuredQuote.link,
     cta: 'Joé Lemmers',
-    color: '#6BB5E8' // Sky blue
+    color: '#1A2D5E' // IZWM Navy
   },
   {
     id: 'composting',
@@ -181,7 +181,7 @@ export const getInvolvedCards = [
     icon: 'BookOpen',
     cta: 'Learn More',
     link: '#toolkit',
-    color: '#5B8C5A', // Green
+    color: '#C2CB32', // IZWM Lime
     visual: 'composting'
   },
   {
@@ -193,7 +193,7 @@ export const getInvolvedCards = [
     icon: 'Target',
     cta: 'Share Your Picture',
     link: '#',
-    color: '#EF4444', // Red
+    color: '#952925', // IZWM Brick Red
     visual: 'refuse'
   },
   {
@@ -205,7 +205,7 @@ export const getInvolvedCards = [
     thumbnail: 'https://img.youtube.com/vi/example-video-id/maxresdefault.jpg',
     cta: 'Watch Video',
     link: '#',
-    color: '#8B5CF6' // Purple
+    color: '#1586C0' // IZWM Blue
   }
 ];
 

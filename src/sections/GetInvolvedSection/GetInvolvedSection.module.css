@@ -28,7 +28,7 @@
 }
 
 .taglineBox {
-  background: linear-gradient(135deg, var(--zw-lime) 0%, var(--accent-sage) 100%);
+  background: linear-gradient(135deg, var(--izwm-lime) 0%, var(--izwm-gold) 100%);
   padding: 20px 32px;
   border-radius: var(--radius-lg);
   margin: 0 auto;
@@ -91,7 +91,7 @@
 }
 
 .actionCard:hover {
-  border-color: var(--accent-navy) !important;
+  border-color: var(--izwm-gold) !important;
 }
 
 .cardVisual {
@@ -119,7 +119,7 @@
 .cardSubtitle {
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--accent-navy);
+  color: var(--izwm-brick);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -146,7 +146,7 @@
   gap: 8px;
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--accent-navy);
+  color: var(--izwm-blue);
   margin-top: auto;
   padding-top: 12px;
   border-top: 2px solid var(--line-200);
@@ -154,7 +154,7 @@
 
 /* Quote Card */
 .quoteCard {
-  background: linear-gradient(135deg, #6BB5E8 0%, #4A8FC7 100%);
+  background: linear-gradient(135deg, var(--izwm-navy) 0%, var(--izwm-blue) 100%);
   color: #fff;
   padding: 32px;
   grid-row: span 2;
@@ -221,7 +221,7 @@
 
 .videoPlaceholder {
   height: 200px;
-  background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%);
+  background: linear-gradient(135deg, var(--izwm-blue) 0%, var(--izwm-navy) 100%);
   position: relative;
   display: flex;
   align-items: center;
@@ -237,7 +237,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #8B5CF6;
+  color: var(--izwm-blue);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   padding-left: 4px;
 }
@@ -262,7 +262,7 @@
 
 /* Bottom CTA */
 .bottomCta {
-  background: linear-gradient(135deg, var(--accent-navy) 0%, #1e3a5f 100%);
+  background: linear-gradient(135deg, var(--izwm-brick) 0%, var(--izwm-navy) 100%);
   border-radius: var(--radius-xl);
   padding: clamp(36px, 6vw, 52px);
   box-shadow: var(--shadow-lg);
