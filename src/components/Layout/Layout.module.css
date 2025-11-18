@@ -1,0 +1,285 @@
+.appLayout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line-200);
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  gap: 24px;
+}
+
+.navBrand {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.navBrand:focus-visible {
+  outline: 3px solid var(--accent-navy);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.mobileMenuToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--ink-900);
+  padding: 8px;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+
+.mobileMenuToggle:hover {
+  background: var(--line-100);
+}
+
+.mobileMenuToggle:focus-visible {
+  outline: 3px solid var(--accent-navy);
+  outline-offset: 2px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navLink {
+  padding: 10px 16px;
+  color: var(--ink-900);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1rem;
+}
+
+.navLink:hover {
+  background: var(--line-100);
+  color: var(--accent-navy);
+}
+
+.navLink:focus-visible {
+  outline: 3px solid var(--accent-navy);
+  outline-offset: 2px;
+}
+
+.registerBtn {
+  margin-left: 8px;
+}
+
+/* Main Content */
+.mainContent {
+  flex: 1;
+}
+
+/* Footer */
+.siteFooter {
+  background: var(--izwm-brick);
+  color: #fff;
+  padding: 60px 0 24px 0;
+  margin-top: 80px;
+}
+
+.footerGrid {
+  display: grid;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .footerGrid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+.footerSection h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: var(--zw-gold);
+}
+
+.footerLogo {
+  margin-bottom: 16px;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+
+.footerDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin: 0 0 20px 0;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 12px;
+}
+
+.socialLinks a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.socialLinks a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.socialLinks a:focus-visible {
+  outline: 3px solid var(--zw-gold);
+  outline-offset: 2px;
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerLinks li {
+  margin-bottom: 10px;
+}
+
+.footerLinks a,
+.footerLinks button {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.footerLinks a:hover,
+.footerLinks button:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footerLinks a:focus-visible,
+.footerLinks button:focus-visible {
+  outline: 2px solid var(--zw-gold);
+  outline-offset: 4px;
+}
+
+.footerBottom {
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.footerBottom p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin: 8px 0;
+}
+
+.footerBottom a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footerBottom a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.footerCredits {
+  font-weight: 600;
+  color: var(--zw-gold);
+  opacity: 1 !important;
+}
+
+/* Mobile Styles */
+@media (max-width: 1024px) {
+  .mobileMenuToggle {
+    display: block;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px;
+    gap: 12px;
+    box-shadow: var(--shadow-lg);
+    border-top: 1px solid var(--line-200);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .navLinksOpen {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navLink {
+    width: 100%;
+    text-align: left;
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .registerBtn {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .siteFooter {
+    padding: 40px 0 20px 0;
+    margin-top: 60px;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+

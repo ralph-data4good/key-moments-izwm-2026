@@ -1,0 +1,296 @@
+.registerSection {
+  padding: clamp(60px, 10vw, 100px) 0;
+  background: linear-gradient(to bottom, #fff 0%, var(--zw-cream) 100%);
+}
+
+.registerCard {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  border: 3px solid var(--zw-gold);
+  display: grid;
+}
+
+@media (min-width: 1024px) {
+  .registerCard {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.registerContent {
+  padding: clamp(40px, 6vw, 60px);
+  background: linear-gradient(135deg, #fff 0%, var(--line-100) 100%);
+}
+
+.contentInner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.registerTitle {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: var(--ink-900);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.registerSubtitle {
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  line-height: 1.6;
+  color: var(--ink-600);
+  margin: 0;
+}
+
+/* Steps */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 0;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.stepNumber {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--accent-navy) 0%, var(--accent-sky) 100%);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(74, 143, 199, 0.3);
+}
+
+.stepText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 4px;
+}
+
+.stepText strong {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink-900);
+}
+
+.stepText span {
+  font-size: 0.95rem;
+  color: var(--ink-600);
+}
+
+/* Benefits */
+.benefits {
+  padding: 24px;
+  background: var(--zw-cream);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--line-200);
+}
+
+.benefitsTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--izwm-brick);
+  margin: 0 0 16px 0;
+}
+
+.benefitsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.benefitsList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--ink-700);
+  line-height: 1.5;
+}
+
+.benefitsList li svg {
+  color: var(--zw-lime);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Visual Side */
+.registerVisual {
+  background: linear-gradient(135deg, var(--izwm-brick) 0%, var(--izwm-navy) 100%);
+  padding: clamp(40px, 6vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.registerVisual::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(164, 191, 61, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 70% 70%, rgba(74, 143, 199, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.visualInner {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1;
+}
+
+.iconCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+.floatingCard {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.floatingCard:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.floatingCard:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.floatingCard:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+/* Mobile Styles */
+@media (max-width: 1023px) {
+  .registerCard {
+    grid-template-columns: 1fr;
+  }
+
+  .registerVisual {
+    min-height: 300px;
+  }
+
+  .iconCircle {
+    width: 140px;
+    height: 140px;
+  }
+
+  .iconCircle svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .floatingCard {
+    width: 48px;
+    height: 48px;
+  }
+
+  .floatingCard svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .registerContent {
+    padding: clamp(32px, 5vw, 40px);
+  }
+
+  .steps {
+    gap: 16px;
+  }
+
+  .stepNumber {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .stepText strong {
+    font-size: 1rem;
+  }
+
+  .stepText span {
+    font-size: 0.875rem;
+  }
+
+  .benefits {
+    padding: 20px;
+  }
+
+  .benefitsList li {
+    font-size: 0.875rem;
+  }
+
+  .registerSection .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

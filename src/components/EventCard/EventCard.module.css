@@ -1,0 +1,104 @@
+.eventCard {
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.placeholderPoster {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background: linear-gradient(135deg, var(--zw-lime) 0%, var(--accent-sage) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+.cardBody {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink-900);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--ink-600);
+  font-weight: 500;
+}
+
+.metaItem svg {
+  flex-shrink: 0;
+  color: var(--accent-navy);
+}
+
+.organizer {
+  font-size: 0.875rem;
+  color: var(--ink-600);
+  font-style: italic;
+  padding-top: 8px;
+  border-top: 1px solid var(--line-200);
+}
+
+.summary {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-700);
+  margin: 0;
+  flex: 1;
+}
+
+.cardFooter {
+  padding-top: 12px;
+  margin-top: auto;
+}
+
+.cardFooter .btn-text {
+  font-size: 0.9rem;
+  padding: 0;
+}
+
+/* Modality Chips */
+.chip.inperson {
+  background: var(--chip-inperson);
+  color: #fff;
+  border-color: var(--chip-inperson);
+}
+
+.chip.online {
+  background: var(--chip-online);
+  color: var(--ink-900);
+  border-color: var(--chip-online);
+}
+
+.chip.hybrid {
+  background: var(--chip-hybrid);
+  color: #fff;
+  border-color: var(--chip-hybrid);
+}
+
