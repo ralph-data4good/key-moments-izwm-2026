@@ -1,10 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { weeklyThemes } from '../../config/izwm2026Content';
 import Icons from '../../components/Icons/Icons';
 import styles from './WeeklyThemesSection.module.css';
 
 function WeeklyThemesSection() {
   const [selectedWeek, setSelectedWeek] = useState(weeklyThemes[0]);
+  const weekSelectorRef = useRef(null);
+
+  const scrollWeeks = (direction) => {
+    if (weekSelectorRef.current) {
+      const scrollAmount = 200;
+      weekSelectorRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleWeekChange = (week) => {
+    setSelectedWeek(week);
+    // Scroll the selected week into view
+    if (weekSelectorRef.current) {
+      const selectedButton = weekSelectorRef.current.querySelector(`[data-week-id="${week.id}"]`);
+      if (selectedButton) {
+        selectedButton.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+  };
 
   return (
     <section id="weekly-themes" className={styles.weeklyThemesSection}>
@@ -19,27 +41,70 @@ function WeeklyThemesSection() {
           </p>
         </div>
 
+        {/* Visual Timeline Overview - Moved to Top */}
+        <div className={styles.timelineVisual}>
+          <div className={styles.timelineLine}></div>
+          {weeklyThemes.map((week, index) => (
+            <div 
+              key={week.id} 
+              className={styles.timelinePoint}
+              style={{ left: `${(index / (weeklyThemes.length - 1)) * 100}%` }}
+            >
+              <div 
+                className={`${styles.timelineDot} ${selectedWeek.id === week.id ? styles.timelineDotActive : ''}`}
+                style={{ backgroundColor: week.color }}
+                onClick={() => handleWeekChange(week)}
+                role="button"
+                tabIndex={0}
+                aria-label={`Select ${week.week}: ${week.title}`}
+              ></div>
+              <div className={styles.timelineLabel} style={{ color: week.color }}>
+                {week.dates}
+              </div>
+            </div>
+          ))}
+        </div>
+
         <div className={styles.weeklyContent}>
-          {/* Horizontal Week Selector */}
-          <div className={styles.weekSelector}>
-            {weeklyThemes.map((week) => (
-              <button
-                key={week.id}
-                className={`${styles.weekTab} ${selectedWeek.id === week.id ? styles.weekTabActive : ''}`}
-                onClick={() => setSelectedWeek(week)}
-                style={{
-                  borderBottomColor: selectedWeek.id === week.id ? week.color : 'transparent'
-                }}
-              >
-                <div className={styles.weekNumber} style={{ backgroundColor: week.color }}>
-                  {week.week.replace('Week ', '')}
-                </div>
-                <div className={styles.weekTabText}>
-                  <div className={styles.weekTabDates}>{week.dates}</div>
-                  <div className={styles.weekTabTitle}>{week.title}</div>
-                </div>
-              </button>
-            ))}
+          {/* Horizontal Week Selector with Navigation Arrows */}
+          <div className={styles.weekSelectorWrapper}>
+            <button 
+              className={styles.navArrow}
+              onClick={() => scrollWeeks('left')}
+              aria-label="Scroll left"
+            >
+              <Icons.ChevronLeft size={24} />
+            </button>
+            
+            <div className={styles.weekSelector} ref={weekSelectorRef}>
+              {weeklyThemes.map((week) => (
+                <button
+                  key={week.id}
+                  data-week-id={week.id}
+                  className={`${styles.weekTab} ${selectedWeek.id === week.id ? styles.weekTabActive : ''}`}
+                  onClick={() => handleWeekChange(week)}
+                  style={{
+                    borderTopColor: selectedWeek.id === week.id ? week.color : 'transparent'
+                  }}
+                >
+                  <div className={styles.weekNumber} style={{ backgroundColor: week.color }}>
+                    {week.week.replace('Week ', '')}
+                  </div>
+                  <div className={styles.weekTabText}>
+                    <div className={styles.weekTabDates}>{week.dates}</div>
+                    <div className={styles.weekTabTitle}>{week.title}</div>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            <button 
+              className={styles.navArrow}
+              onClick={() => scrollWeeks('right')}
+              aria-label="Scroll right"
+            >
+              <Icons.ChevronRight size={24} />
+            </button>
           </div>
 
           {/* Selected Week Details */}
@@ -71,27 +136,6 @@ function WeeklyThemesSection() {
               </a>
             </div>
           </div>
-        </div>
-
-        {/* Visual Timeline Overview */}
-        <div className={styles.timelineVisual}>
-          <div className={styles.timelineLine}></div>
-          {weeklyThemes.map((week, index) => (
-            <div 
-              key={week.id} 
-              className={styles.timelinePoint}
-              style={{ left: `${(index / (weeklyThemes.length - 1)) * 100}%` }}
-            >
-              <div 
-                className={`${styles.timelineDot} ${selectedWeek.id === week.id ? styles.timelineDotActive : ''}`}
-                style={{ backgroundColor: week.color }}
-                onClick={() => setSelectedWeek(week)}
-              ></div>
-              <div className={styles.timelineLabel} style={{ color: week.color }}>
-                {week.dates}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

@@ -41,6 +41,12 @@ const Icons = {
     </svg>
   ),
   
+  ChevronLeft: ({ size = 24, ...props }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  ),
+  
   ChevronRight: ({ size = 24, ...props }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
       <polyline points="9 18 15 12 9 6"></polyline>
