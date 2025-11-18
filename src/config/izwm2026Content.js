@@ -131,6 +131,86 @@ export const weeklyThemes = [
   }
 ];
 
+// Featured Quote
+export const featuredQuote = {
+  quote: "...the world urgently needs to shift to a Zero Waste Approach...",
+  author: "Joé Lemmers",
+  role: "Lead Author, UNEP Global Waste Management Outlook",
+  link: "https://www.unep.org/resources/global-waste-management-outlook-2024"
+};
+
+// Get Involved Action Cards
+export const getInvolvedCards = [
+  {
+    id: 'join-event',
+    type: 'action',
+    title: 'Join an Event',
+    subtitle: 'Take Action',
+    description: 'Participate in the series of activities in the celebration of IZWM as Zero Waste Month.',
+    icon: 'Calendar',
+    cta: 'View Calendar',
+    link: '#events',
+    color: '#D4A23D', // Gold
+    visual: 'event'
+  },
+  {
+    id: 'join-conversation',
+    type: 'action',
+    title: 'Join the Conversation',
+    subtitle: 'Make #ZeroWasteClimate/ClimateSolution trend!',
+    description: 'Take part in the conversation on using #IZWM2026 and #InvestInZeroWaste.',
+    icon: 'Users',
+    cta: 'Take Action',
+    link: 'https://www.facebook.com/hashtag/izwm2026',
+    color: '#4A8FC7', // Blue
+    visual: 'conversation'
+  },
+  {
+    id: 'quote',
+    type: 'quote',
+    quote: featuredQuote.quote,
+    author: featuredQuote.author,
+    role: featuredQuote.role,
+    link: featuredQuote.link,
+    cta: 'Joé Lemmers',
+    color: '#6BB5E8' // Sky blue
+  },
+  {
+    id: 'composting',
+    type: 'resource',
+    title: 'Back to Earth: Composting for Various Contexts',
+    description: 'Explore the benefits of composting, and it is most effective implementation within your community.',
+    icon: 'BookOpen',
+    cta: 'Learn More',
+    link: '#toolkit',
+    color: '#5B8C5A', // Green
+    visual: 'composting'
+  },
+  {
+    id: 'refuse-single-use',
+    type: 'campaign',
+    title: 'Join the Refuse Single Use Day',
+    subtitle: 'January 8 is Refuse Single Use Day',
+    description: 'Get ready to join us and #ChooseToReuse in 2026 by refusing single use plastics or paper and bringing your own reusable while also pressuring your friends to do the same.',
+    icon: 'Target',
+    cta: 'Share Your Picture',
+    link: '#',
+    color: '#EF4444', // Red
+    visual: 'refuse'
+  },
+  {
+    id: 'video',
+    type: 'video',
+    title: 'The History of Zero Waste Month',
+    description: 'Watch the journey of IZWM from 2023 to today',
+    videoId: 'example-video-id',
+    thumbnail: 'https://img.youtube.com/vi/example-video-id/maxresdefault.jpg',
+    cta: 'Watch Video',
+    link: '#',
+    color: '#8B5CF6' // Purple
+  }
+];
+
 export const actionItems = [
   {
     id: 'action-1',

@@ -1,12 +1,91 @@
 import React from 'react';
 import Icons from '../../components/Icons/Icons';
-import { actionItems } from '../../config/izwm2026Content';
+import { getInvolvedCards, heroContent } from '../../config/izwm2026Content';
 import styles from './GetInvolvedSection.module.css';
 
 function GetInvolvedSection() {
   const getIcon = (iconName) => {
     const IconComponent = Icons[iconName];
-    return IconComponent ? <IconComponent size={32} /> : <Icons.Target size={32} />;
+    return IconComponent ? <IconComponent size={28} /> : <Icons.Target size={28} />;
+  };
+
+  const renderCard = (card) => {
+    switch (card.type) {
+      case 'quote':
+        return (
+          <div key={card.id} className={`${styles.card} ${styles.quoteCard}`}>
+            <div className={styles.quoteIcon}>"</div>
+            <blockquote className={styles.quote}>
+              {card.quote}
+            </blockquote>
+            <div className={styles.quoteAuthor}>
+              <div className={styles.authorName}>{card.cta}</div>
+              <div className={styles.authorRole}>{card.role}</div>
+            </div>
+            {card.link && (
+              <a href={card.link} className={styles.quoteLink} target="_blank" rel="noopener noreferrer">
+                Read Full Report <Icons.ExternalLink size={14} />
+              </a>
+            )}
+          </div>
+        );
+
+      case 'video':
+        return (
+          <div key={card.id} className={`${styles.card} ${styles.videoCard}`}>
+            <div className={styles.videoPlaceholder}>
+              <div className={styles.playButton}>
+                <Icons.ChevronRight size={32} />
+              </div>
+              <div className={styles.videoOverlay}>
+                <span className={styles.videoLabel}>▶ Watch Video</span>
+              </div>
+            </div>
+            <div className={styles.cardBody}>
+              <h3 className={styles.cardTitle}>{card.title}</h3>
+              <p className={styles.cardDescription}>{card.description}</p>
+            </div>
+          </div>
+        );
+
+      case 'action':
+      case 'resource':
+      case 'campaign':
+        return (
+          <a 
+            key={card.id} 
+            href={card.link} 
+            className={`${styles.card} ${styles.actionCard}`}
+            style={{ borderLeftColor: card.color }}
+          >
+            <div className={styles.cardVisual} style={{ backgroundColor: card.color }}>
+              {card.visual && (
+                <div className={styles.visualPlaceholder}>
+                  {card.visual === 'event' && '📅'}
+                  {card.visual === 'conversation' && '💬'}
+                  {card.visual === 'composting' && '🌱'}
+                  {card.visual === 'refuse' && '♻️'}
+                </div>
+              )}
+            </div>
+            <div className={styles.cardBody}>
+              {card.subtitle && (
+                <div className={styles.cardSubtitle}>{card.subtitle}</div>
+              )}
+              <h3 className={styles.cardTitle}>{card.title}</h3>
+              <p className={styles.cardDescription}>{card.description}</p>
+              <div className={styles.cardCta}>
+                {getIcon(card.icon)}
+                <span>{card.cta}</span>
+                <Icons.ChevronRight size={16} />
+              </div>
+            </div>
+          </a>
+        );
+
+      default:
+        return null;
+    }
   };
 
   return (
@@ -17,57 +96,25 @@ function GetInvolvedSection() {
             Get Involved
           </h2>
           <p className={styles.sectionSubtitle}>
-            Join the global zero waste movement. Here are practical ways you can 
-            take action during International Zero Waste Month and beyond.
+            Zero Waste Is Easier Together. Zero Waste Is For Everyone. Zero Waste Is Now.
           </p>
-        </div>
-
-        <div className={styles.actionsGrid}>
-          {actionItems.map((action) => (
-            <div key={action.id} className={styles.actionCard}>
-              <div className={styles.actionIcon}>
-                {getIcon(action.icon)}
-              </div>
-              
-              <h3 className={styles.actionTitle}>{action.title}</h3>
-              <p className={styles.actionDescription}>{action.description}</p>
-
-              {action.link && (
-                <a href={action.link} className={styles.actionLink}>
-                  Learn More <Icons.ChevronRight size={16} />
-                </a>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <div className={styles.callToAction}>
-          <div className={styles.ctaInner}>
-            <div className={styles.ctaContent}>
-              <h3 className={styles.ctaTitle}>
-                Ready to make an impact?
-              </h3>
-              <p className={styles.ctaText}>
-                Register your IZWM event or activity and join hundreds of communities 
-                worldwide working toward a zero waste future.
-              </p>
-            </div>
-            <div className={styles.ctaButtons}>
-              <a href="#register" className="btn btn-primary btn-large">
-                <Icons.Plus size={20} />
-                Register Event
-              </a>
-              <a 
-                href="https://zerowaste.asia/campaigns" 
-                className="btn btn-outline btn-large"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icons.Target size={20} />
-                View Campaigns
-              </a>
-            </div>
+          <div className={styles.taglineBox}>
+            <p className={styles.tagline}>{heroContent.tagline}</p>
           </div>
+        </div>
+
+        <div className={styles.cardsGrid}>
+          {getInvolvedCards.map(card => renderCard(card))}
+        </div>
+
+        <div className={styles.bottomCta}>
+          <p className={styles.bottomCtaText}>
+            Ready to take action? Register your IZWM event and be part of the global movement.
+          </p>
+          <a href="#register" className="btn btn-primary btn-large">
+            <Icons.Plus size={20} />
+            Register Your Event
+          </a>
         </div>
       </div>
     </section>
