@@ -60,40 +60,69 @@ function FeaturedEventCarousel() {
     return weekLabels[weeklyTheme] || 'Featured Event';
   };
 
+  // Get week color based on theme
+  const getWeekColor = (weeklyTheme) => {
+    const weekColors = {
+      'week-1': '#A4BF3D', // Green
+      'week-2': '#D4A23D', // Gold
+      'week-3': '#4A8FC7', // Blue
+      'week-4': '#CC5538', // Brick/Orange
+      'week-5': '#8B5A9D'  // Purple
+    };
+    return weekColors[weeklyTheme] || '#A4BF3D';
+  };
+
+  // Format date
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  };
+
   return (
     <div 
       className={styles.carousel}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className={styles.carouselHeader}>
-        <span className={styles.headerLabel}>FEATURED EVENT</span>
-        <span className={styles.weekBadge}>
-          Week {getWeekNumber(currentEvent.weeklyTheme)}
-        </span>
-      </div>
-
       <div className={styles.carouselContent}>
         <div className={styles.imageSection}>
-          <div className={styles.imagePlaceholder}>
-            <Icons.Calendar size={48} />
+          {/* Image Background with Gradient Overlay */}
+          <div className={styles.imageBackground}></div>
+          
+          {/* Soft Corner Shadows */}
+          <div className={styles.cornerShadows}></div>
+          
+          {/* Event Details Overlay */}
+          <div className={styles.eventOverlay}>
+            <div className={styles.spotlightLabel}>PROJECT SPOTLIGHT</div>
+            
+            <h3 className={styles.eventTitle}>{currentEvent.title}</h3>
+            
+            <div className={styles.eventLocation}>
+              {currentEvent.organizer_name || 'Zero Waste Initiative'}
+            </div>
+            
+            <div 
+              className={styles.countryBadge}
+              style={{ backgroundColor: getWeekColor(currentEvent.weeklyTheme) }}
+            >
+              {currentEvent.country.toUpperCase()}
+            </div>
           </div>
-          <div className={styles.weekLabel}>
-            {getWeekLabel(currentEvent.weeklyTheme)}
-          </div>
-        </div>
 
-        <div className={styles.eventInfo}>
-          <h4 className={styles.eventTitle}>{currentEvent.title}</h4>
-          <div className={styles.eventMeta}>
-            <span className={styles.metaItem}>
-              <Icons.MapPin size={14} />
-              {currentEvent.location}
-            </span>
-            <span className={styles.metaDot}>•</span>
-            <span className={styles.metaItem}>
-              {currentEvent.country}
-            </span>
+          {/* Week Badge - Top Right */}
+          <div 
+            className={styles.weekBadgeTop}
+            style={{ backgroundColor: getWeekColor(currentEvent.weeklyTheme) }}
+          >
+            <span className={styles.weekNumber}>Week {getWeekNumber(currentEvent.weeklyTheme)}</span>
+            <span className={styles.weekTheme}>{getWeekLabel(currentEvent.weeklyTheme)}</span>
+          </div>
+
+          {/* Date Badge - Top Left */}
+          <div className={styles.dateBadge}>
+            <Icons.Calendar size={16} />
+            {formatDate(currentEvent.start_datetime)}
           </div>
         </div>
       </div>
@@ -114,6 +143,9 @@ function FeaturedEventCarousel() {
               onClick={() => setCurrentIndex(index)}
               className={`${styles.indicator} ${index === currentIndex ? styles.indicatorActive : ''}`}
               aria-label={`Go to event ${index + 1}`}
+              style={{ 
+                backgroundColor: index === currentIndex ? getWeekColor(featuredEvents[index].weeklyTheme) : undefined 
+              }}
             />
           ))}
         </div>
