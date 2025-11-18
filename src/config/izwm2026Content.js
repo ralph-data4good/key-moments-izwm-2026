@@ -26,9 +26,7 @@ export const aboutContent = {
   objectives: [
     'Celebrate community-led zero waste initiatives',
     'Share best practices and solutions across Asia',
-    'Support waste workers and informal sector',
-    'Advocate for policy change at local and national levels',
-    'Build a global movement for waste-free communities'
+    'Amplify the voices of waste pickers and frontline workers'
   ]
 };
 

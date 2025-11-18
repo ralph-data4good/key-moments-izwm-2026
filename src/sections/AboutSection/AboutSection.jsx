@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Icons from '../../components/Icons/Icons';
 import { aboutContent, historyContent, partnerOrganizations, heroContent } from '../../config/izwm2026Content';
 import styles from './AboutSection.module.css';
 
 function AboutSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const partnersPerSlide = 3;
+  const totalSlides = Math.ceil(partnerOrganizations.length / partnersPerSlide);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+
+  const getCurrentPartners = () => {
+    const start = currentSlide * partnersPerSlide;
+    return partnerOrganizations.slice(start, start + partnersPerSlide);
+  };
   const objectiveIcons = {
     'Celebrate community-led zero waste initiatives': 'Heart',
     'Share best practices and solutions across Asia': 'Globe',
-    'Amplify the voices of waste pickers and frontline workers': 'Users',
-    'Build solidarity and collective action globally': 'Target'
+    'Amplify the voices of waste pickers and frontline workers': 'Users'
   };
 
   const getObjectiveIcon = (objective) => {
@@ -128,19 +143,51 @@ function AboutSection() {
       <div className={styles.partnersSection}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Partner Organizations</h2>
+            <div className={styles.partnersCount}>
+              <span className={styles.countNumber}>{partnerOrganizations.length}+</span>
+              <span className={styles.countLabel}>Partner Organizations</span>
+            </div>
             <p className={styles.sectionSubtitle}>
               Organizations that have supported International Zero Waste Month
             </p>
           </div>
 
-          <div className={styles.partnersGrid}>
-            {partnerOrganizations.map((partner, index) => (
-              <div key={index} className={styles.partnerCard}>
-                <div className={styles.partnerLogo}>{partner.logo}</div>
-                <h4 className={styles.partnerName}>{partner.name}</h4>
-                <p className={styles.partnerCountry}>{partner.country}</p>
-              </div>
+          <div className={styles.carouselContainer}>
+            <button 
+              onClick={prevSlide} 
+              className={styles.carouselButton}
+              aria-label="Previous partners"
+            >
+              <Icons.ChevronRight size={24} style={{ transform: 'rotate(180deg)' }} />
+            </button>
+
+            <div className={styles.partnersCarousel}>
+              {getCurrentPartners().map((partner, index) => (
+                <div key={currentSlide * partnersPerSlide + index} className={styles.partnerCard}>
+                  <div className={styles.partnerLogo}>{partner.logo}</div>
+                  <h4 className={styles.partnerName}>{partner.name}</h4>
+                  <p className={styles.partnerCountry}>{partner.country}</p>
+                </div>
+              ))}
+            </div>
+
+            <button 
+              onClick={nextSlide} 
+              className={styles.carouselButton}
+              aria-label="Next partners"
+            >
+              <Icons.ChevronRight size={24} />
+            </button>
+          </div>
+
+          <div className={styles.carouselIndicators}>
+            {Array.from({ length: totalSlides }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`${styles.indicator} ${currentSlide === index ? styles.indicatorActive : ''}`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
             ))}
           </div>
 

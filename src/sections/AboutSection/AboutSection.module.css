@@ -360,11 +360,104 @@
   background: #fff;
 }
 
-.partnersGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+/* Partners Count Banner */
+.partnersCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px 40px;
+  background: linear-gradient(135deg, var(--accent-navy) 0%, var(--accent-sky) 100%);
+  border-radius: var(--radius-lg);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.countNumber {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.countLabel {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+/* Carousel Container */
+.carouselContainer {
+  display: flex;
+  align-items: center;
   gap: 24px;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.carouselButton {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent-navy);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+}
+
+.carouselButton:hover {
+  background: var(--accent-sky);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+
+.carouselButton:active {
+  transform: scale(0.95);
+}
+
+.partnersCarousel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  flex: 1;
+  min-height: 200px;
+}
+
+.carouselIndicators {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
   margin-bottom: 48px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--line-300);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.indicator:hover {
+  background: var(--accent-navy);
+  transform: scale(1.2);
+}
+
+.indicatorActive {
+  background: var(--accent-navy);
+  width: 32px;
+  border-radius: 6px;
 }
 
 .partnerCard {
@@ -489,9 +582,47 @@
     font-size: 2.5rem;
   }
 
-  .partnersGrid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  .partnersCount {
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px 24px;
+  }
+
+  .countNumber {
+    font-size: 2.5rem;
+  }
+
+  .countLabel {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .carouselContainer {
+    flex-direction: column;
     gap: 20px;
+  }
+
+  .carouselButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    z-index: 10;
+  }
+
+  .carouselButton:first-of-type {
+    left: -10px;
+  }
+
+  .carouselButton:last-of-type {
+    right: -10px;
+  }
+
+  .partnersCarousel {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 20px;
   }
 
   .partnerCard {
