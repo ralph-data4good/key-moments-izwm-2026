@@ -29,7 +29,7 @@ function HeroSection() {
             <div className={styles.heroMetadata}>
               <span className={styles.metaItem}>
                 <Icons.Calendar size={18} />
-                November 2026
+                January 2026
               </span>
               <span className={styles.metaSeparator}>·</span>
               <span className={styles.metaItem}>

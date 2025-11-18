@@ -162,7 +162,7 @@ function Layout({ children }) {
               All rights reserved. Built with <Icons.Heart size={14} style={{display: 'inline', verticalAlign: 'middle'}} /> for the planet.
             </p>
             <p className={styles.footerCredits}>
-              Part of International Zero Waste Month • November 2026
+              Part of International Zero Waste Month • January 2026
             </p>
           </div>
         </div>

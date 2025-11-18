@@ -6,7 +6,7 @@ export const KEY_MOMENT_IZWM_2026 = 'izwm-2026';
 export const heroContent = {
   title: 'International Zero Waste Month 2026',
   subtitle: 'A global celebration of zero waste solutions across Asia and beyond. Join communities, organizations, and changemakers working together for a waste-free future.',
-  metadata: 'November 2026 · Global · Online and In-Person Events',
+  metadata: 'January 2026 · Global · Online and In-Person Events',
   stats: [
     { value: '40+', label: 'Countries' },
     { value: '300+', label: 'Events' },
@@ -17,7 +17,7 @@ export const heroContent = {
 export const aboutContent = {
   event: {
     title: 'About International Zero Waste Month',
-    description: `International Zero Waste Month (IZWM) is a global key moment organized by the Global Alliance for Incinerator Alternatives (GAIA) and partners worldwide. Throughout November, communities, cities, and organizations come together to celebrate and advance zero waste solutions—from waste reduction and reuse systems to composting and circular economy initiatives.
+    description: `International Zero Waste Month (IZWM) is a global key moment organized by the Global Alliance for Incinerator Alternatives (GAIA) and partners worldwide. Throughout January, communities, cities, and organizations come together to celebrate and advance zero waste solutions—from waste reduction and reuse systems to composting and circular economy initiatives.
 
     IZWM amplifies the voices of waste workers, grassroots movements, and local leaders who are building regenerative systems that respect people and planet. It's a time to showcase what's working, share knowledge across borders, and mobilize collective action for a world without waste.`,
   },
@@ -51,6 +51,17 @@ export const historyContent = [
       '250+ events across 35 countries',
       'Waste audit toolkit launched',
       '8,000+ participants'
+    ]
+  },
+  {
+    year: 2025,
+    title: 'Amplifying Grassroots Voices',
+    summary: 'IZWM 2025 celebrated community-led initiatives, waste picker rights, and circular economy innovations with over 300 events worldwide.',
+    link: '#',
+    highlights: [
+      '300+ events across 40 countries',
+      'First Global Waste Picker Summit',
+      '10,000+ participants'
     ]
   }
 ];
