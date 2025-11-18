@@ -4,81 +4,87 @@
 export const mockEvents = [
   {
     id: 'evt-1',
-    title: 'Zero Waste Workshop Series',
-    start_datetime: '2026-01-05T10:00:00',
-    end_datetime: '2026-01-05T15:00:00',
+    title: 'Zero Waste Finance Workshop',
+    start_datetime: '2026-01-02T10:00:00',
+    end_datetime: '2026-01-02T15:00:00',
     location: 'Manila',
     country: 'Philippines',
-    modality: 'In-Person',
-    summary: 'Hands-on workshops covering composting, plastic alternatives, and community organizing for zero waste.',
-    organizer_name: 'Manila Zero Waste Coalition',
+    modality: 'Hybrid',
+    summary: 'Learn how to secure funding and investment for community-led zero waste projects and social enterprises.',
+    organizer_name: 'GAIA Asia Pacific',
     poster_url: null,
-    campaign_id: 'izwm-2026'
+    campaign_id: 'izwm-2026',
+    weeklyTheme: 'week-1' // LAUNCH
   },
   {
     id: 'evt-2',
-    title: 'Waste Audit Training',
+    title: 'Refuse Single-Use Day: Community Action',
     start_datetime: '2026-01-08T14:00:00',
     end_datetime: '2026-01-08T17:00:00',
     location: 'Online',
     country: 'Global',
     modality: 'Online',
-    summary: 'Learn how to conduct effective waste audits in your community using GAIA\'s proven methodology.',
-    organizer_name: 'GAIA Asia Pacific',
+    summary: 'Global day of action refusing single-use plastics. Join businesses, schools, and communities going plastic-free.',
+    organizer_name: 'Break Free From Plastic Asia',
     poster_url: null,
-    campaign_id: 'izwm-2026'
+    campaign_id: 'izwm-2026',
+    weeklyTheme: 'week-2' // BARRIERS TO ZERO WASTE
   },
   {
     id: 'evt-3',
-    title: 'Zero Waste Cities Summit',
+    title: 'Reuse Systems Showcase',
     start_datetime: '2026-01-12T09:00:00',
     end_datetime: '2026-01-14T17:00:00',
     location: 'Bangkok',
     country: 'Thailand',
     modality: 'Hybrid',
-    summary: 'Three-day summit bringing together city leaders, activists, and experts to share zero waste solutions.',
+    summary: 'Three-day summit showcasing successful reuse, repair, and refill systems from across Asia.',
     organizer_name: 'Zero Waste Cities Alliance',
     poster_url: null,
-    campaign_id: 'izwm-2026'
+    campaign_id: 'izwm-2026',
+    weeklyTheme: 'week-3' // SOLUTIONS WEEK
   },
   {
     id: 'evt-4',
-    title: 'Community Composting Demonstration',
+    title: 'Community Composting Investment Forum',
     start_datetime: '2026-01-15T10:00:00',
     end_datetime: '2026-01-15T13:00:00',
     location: 'Jakarta',
     country: 'Indonesia',
     modality: 'In-Person',
-    summary: 'See community composting in action and learn how to start your own neighborhood program.',
+    summary: 'Connect community composting initiatives with impact investors and funding opportunities.',
     organizer_name: 'Jakarta Composting Network',
     poster_url: null,
-    campaign_id: 'izwm-2026'
+    campaign_id: 'izwm-2026',
+    weeklyTheme: 'week-3' // SOLUTIONS WEEK
   },
   {
     id: 'evt-5',
-    title: 'Plastic-Free Living Panel Discussion',
-    start_datetime: '2026-01-18T19:00:00',
-    end_datetime: '2026-01-18T21:00:00',
+    title: 'Exposing Greenwashing: False Solutions Forum',
+    start_datetime: '2026-01-20T19:00:00',
+    end_datetime: '2026-01-20T21:00:00',
     location: 'Online',
     country: 'Global',
     modality: 'Online',
-    summary: 'Experts and practitioners share strategies for reducing single-use plastics in daily life and business.',
-    organizer_name: 'Break Free From Plastic Asia',
+    summary: 'Expert panel exposing false solutions like incineration, chemical recycling, and plastic offsetting schemes.',
+    organizer_name: 'GAIA Global',
     poster_url: null,
-    campaign_id: 'izwm-2026'
+    campaign_id: 'izwm-2026',
+    weeklyTheme: 'week-4' // FALSE SOLUTIONS WEEK
   },
   {
     id: 'evt-6',
-    title: 'Waste Worker Rights Forum',
-    start_datetime: '2026-01-22T14:00:00',
-    end_datetime: '2026-01-22T17:00:00',
+    title: 'Waste Worker Rights & Just Transition Summit',
+    start_datetime: '2026-01-27T14:00:00',
+    end_datetime: '2026-01-27T17:00:00',
     location: 'Mumbai',
     country: 'India',
-    modality: 'In-Person',
-    summary: 'A forum dedicated to recognizing and advancing the rights and dignity of waste workers.',
+    modality: 'Hybrid',
+    summary: 'Celebrating waste pickers and advocating for fair wages, safe conditions, and recognition in the circular economy.',
     organizer_name: 'Waste Workers Alliance India',
     poster_url: null,
-    campaign_id: 'izwm-2026'
+    campaign_id: 'izwm-2026',
+    weeklyTheme: 'week-5' // HUMANS OF ZERO WASTE
   }
 ];
 

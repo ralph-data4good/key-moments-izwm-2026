@@ -59,6 +59,12 @@ function Layout({ children }) {
 
             <div className={`${styles.navLinks} ${mobileMenuOpen ? styles.navLinksOpen : ''}`}>
               <button 
+                onClick={() => scrollToSection('weekly-themes')}
+                className={styles.navLink}
+              >
+                Weekly Themes
+              </button>
+              <button 
                 onClick={() => scrollToSection('about')}
                 className={styles.navLink}
               >

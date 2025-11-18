@@ -5,6 +5,8 @@ export const KEY_MOMENT_IZWM_2026 = 'izwm-2026';
 
 export const heroContent = {
   title: 'International Zero Waste Month 2026',
+  theme: 'Zero Waste Finance: Investing in Zero Waste',
+  tagline: '#InvestInZeroWaste: Mobilizing resources to support action and accelerate impact.',
   subtitle: 'A global celebration of zero waste solutions across Asia and beyond. Join communities, organizations, and changemakers working together for a waste-free future.',
   metadata: 'January 2026 · Global · Online and In-Person Events',
   stats: [
@@ -77,32 +79,84 @@ export const partnerOrganizations = [
   { name: 'Zero Waste Cities Alliance', country: 'Global', logo: '🏙️' },
 ];
 
+// Weekly Themes for IZWM 2026
+export const weeklyThemes = [
+  {
+    id: 'week-1',
+    week: 'Week 1',
+    dates: 'Jan 1-3',
+    title: 'LAUNCH',
+    description: 'Kickstart International Zero Waste Month with launch events and awareness campaigns.',
+    color: '#8B5CF6', // Purple
+    dateRange: { start: '2026-01-01', end: '2026-01-03' }
+  },
+  {
+    id: 'week-2',
+    week: 'Week 2',
+    dates: 'Jan 4-10',
+    title: 'BARRIERS TO ZERO WASTE',
+    subtitle: '(Refuse Single-Use Day)',
+    description: 'Identify and address barriers preventing zero waste adoption. Highlight alternatives to single-use plastics.',
+    color: '#EF4444', // Red
+    dateRange: { start: '2026-01-04', end: '2026-01-10' }
+  },
+  {
+    id: 'week-3',
+    week: 'Week 3',
+    dates: 'Jan 11-17',
+    title: 'SOLUTIONS WEEK',
+    subtitle: '(Reuse, etc)',
+    description: 'Showcase proven zero waste solutions: reuse systems, composting, repair initiatives, and circular models.',
+    color: '#10B981', // Green
+    dateRange: { start: '2026-01-11', end: '2026-01-17' }
+  },
+  {
+    id: 'week-4',
+    week: 'Week 4',
+    dates: 'Jan 18-24',
+    title: 'FALSE SOLUTIONS WEEK',
+    description: 'Expose greenwashing and false solutions like incineration, chemical recycling, and plastic credits.',
+    color: '#EC4899', // Pink
+    dateRange: { start: '2026-01-18', end: '2026-01-24' }
+  },
+  {
+    id: 'week-5',
+    week: 'Week 5',
+    dates: 'Jan 25-31',
+    title: 'HUMANS OF ZERO WASTE',
+    subtitle: '(Just Transition)',
+    description: 'Celebrate waste workers, community leaders, and grassroots movements building a just transition.',
+    color: '#3B82F6', // Blue
+    dateRange: { start: '2026-01-25', end: '2026-01-31' }
+  }
+];
+
 export const actionItems = [
   {
     id: 'action-1',
-    title: 'Join a Zero Waste Campaign',
-    description: 'Connect with grassroots movements in your community working on waste reduction, plastic-free initiatives, and circular economy projects.',
-    link: '#',
-    icon: 'Users'
-  },
-  {
-    id: 'action-2',
-    title: 'Host a Film Screening or Dialogue',
-    description: 'Use our curated film list and discussion guides to spark conversations about waste, climate, and community solutions.',
-    link: '#',
-    icon: 'BookOpen'
-  },
-  {
-    id: 'action-3',
-    title: 'Organize a Waste Audit',
-    description: 'Conduct a community waste audit using our step-by-step toolkit. Share your findings to inform local policy and behavior change.',
+    title: 'Invest in Zero Waste Solutions',
+    description: 'Support community-led initiatives, reuse systems, and circular economy projects that need financial backing to scale.',
     link: '#',
     icon: 'Target'
   },
   {
+    id: 'action-2',
+    title: 'Join a Zero Waste Campaign',
+    description: 'Connect with grassroots movements working on waste reduction, plastic-free initiatives, and policy advocacy.',
+    link: '#',
+    icon: 'Users'
+  },
+  {
+    id: 'action-3',
+    title: 'Host a Film Screening or Dialogue',
+    description: 'Use our curated film list and discussion guides to spark conversations about waste finance and community solutions.',
+    link: '#',
+    icon: 'BookOpen'
+  },
+  {
     id: 'action-4',
     title: 'Support Waste Workers',
-    description: 'Learn about and advocate for the rights of waste pickers and informal sector workers who are the backbone of recycling systems.',
+    description: 'Advocate for fair wages, safe conditions, and recognition of waste pickers who are essential to the circular economy.',
     link: '#',
     icon: 'Heart'
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Icons from '../Icons/Icons';
+import { weeklyThemes } from '../../config/izwm2026Content';
 import styles from './EventCard.module.css';
 
 // Simple date formatting utility
@@ -29,6 +30,11 @@ function EventCard({ event, onClick }) {
   };
 
   const modalityClass = event.modality?.toLowerCase().replace(' ', '').replace('-', '') || '';
+  
+  // Find the weekly theme for this event
+  const weeklyTheme = event.weeklyTheme 
+    ? weeklyThemes.find(w => w.id === event.weeklyTheme)
+    : null;
 
   return (
     <div
@@ -47,6 +53,14 @@ function EventCard({ event, onClick }) {
         <img src={event.poster_url} alt={event.title} className="poster" />
       ) : (
         <div className={styles.placeholderPoster}>
+          {weeklyTheme && (
+            <div 
+              className={styles.weekThemeBadge}
+              style={{ backgroundColor: weeklyTheme.color }}
+            >
+              {weeklyTheme.week}
+            </div>
+          )}
           <span>🌱</span>
         </div>
       )}
@@ -54,9 +68,22 @@ function EventCard({ event, onClick }) {
       <div className={styles.cardBody}>
         <div className={styles.cardHeader}>
           <h3 className={styles.title}>{event.title}</h3>
-          {event.modality && (
-            <span className={`chip ${modalityClass}`}>{event.modality}</span>
-          )}
+          <div className={styles.badges}>
+            {weeklyTheme && (
+              <span 
+                className={styles.weekThemeChip}
+                style={{ 
+                  backgroundColor: weeklyTheme.color,
+                  color: '#fff'
+                }}
+              >
+                {weeklyTheme.title}
+              </span>
+            )}
+            {event.modality && (
+              <span className={`chip ${modalityClass}`}>{event.modality}</span>
+            )}
+          </div>
         </div>
 
         <div className={styles.meta}>

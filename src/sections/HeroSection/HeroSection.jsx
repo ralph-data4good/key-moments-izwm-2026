@@ -22,6 +22,11 @@ function HeroSection() {
               <Logo size="large" />
             </div>
             
+            <div className={styles.themeSection}>
+              <h2 className={styles.theme}>{heroContent.theme}</h2>
+              <p className={styles.tagline}>{heroContent.tagline}</p>
+            </div>
+            
             <p className={styles.heroSubtitle}>
               {heroContent.subtitle}
             </p>

@@ -55,13 +55,40 @@
   }
 }
 
+.themeSection {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  padding: clamp(20px, 4vw, 32px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  animation: fadeInUp 0.8s ease-out 0.15s both;
+}
+
+.theme {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 12px 0;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tagline {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--zw-gold);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
 .heroSubtitle {
   font-size: clamp(1.125rem, 2vw, 1.4rem);
   line-height: 1.6;
   opacity: 0.95;
   max-width: 650px;
   margin: 0;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
 .heroMetadata {
