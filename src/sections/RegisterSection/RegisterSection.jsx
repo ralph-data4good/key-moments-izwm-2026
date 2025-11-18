@@ -27,15 +27,15 @@ function RegisterSection() {
                 <div className={styles.step}>
                   <div className={styles.stepNumber}>1</div>
                   <div className={styles.stepText}>
-                    <strong>Fill out the form</strong>
-                    <span>Provide basic details about your event</span>
+                    <strong>Sign Up</strong>
+                    <span>Create your account on the platform</span>
                   </div>
                 </div>
                 <div className={styles.step}>
                   <div className={styles.stepNumber}>2</div>
                   <div className={styles.stepText}>
-                    <strong>Review & approval</strong>
-                    <span>Our team verifies and approves your submission</span>
+                    <strong>Fill out the form</strong>
+                    <span>Provide basic details about your event</span>
                   </div>
                 </div>
                 <div className={styles.step}>
